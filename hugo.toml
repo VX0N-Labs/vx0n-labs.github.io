@@ -1,6 +1,6 @@
 baseURL = 'https://vx0n-labs.github.io/'
 languageCode = 'en-us'
-title = 'VXON'
+title = 'Vxon Team'
 description = 'Security research platform for CVE analysis, vulnerability research, and technical writeups.'
 theme = 'vxon'
 defaultContentLanguage = 'en'

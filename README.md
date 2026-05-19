@@ -11,7 +11,7 @@ hugo server
 Visit `http://localhost ;D`
 
 ## Submitting Content
-Follow  ![how to use this site](https://github.com/VX0N-Labs/vx0n-labs.github.io/blob/main/how-to-use-this-site.md)
+Follow  [how to use this site](https://github.com/VX0N-Labs/vx0n-labs.github.io/blob/main/how-to-use-this-site.md)
 
 ## Rules
 
