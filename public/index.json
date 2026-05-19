@@ -1,0 +1,37 @@
+[
+{
+    "title": "Post 3",
+    "description": null,
+    "url": "/posts/post-3/",
+    "tags": ["red","green","blue"],
+    "redirect": null
+},
+{
+    "title": "Post 2",
+    "description": null,
+    "url": "/posts/post-2/",
+    "tags": ["red","green"],
+    "redirect": null
+},
+{
+    "title": "Post 1",
+    "description": null,
+    "url": "/posts/post-1/",
+    "tags": ["red"],
+    "redirect": null
+},
+{
+    "title": "Bleeding Lama CVE-2026-7482",
+    "description": "Critical vulnerability in Lama framework",
+    "url": "/posts/bleeding-lama-cve-2026-7482/",
+    "tags": ["cve","vulnerability"],
+    "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
+},
+{
+    "title": "How to Use This Site",
+    "description": "Guide on submitting posts, understanding redirects, and following the rules.",
+    "url": "/posts/how-to-use-this-site/",
+    "tags": ["guide","rules"],
+    "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
+}
+]

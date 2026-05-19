@@ -1,0 +1,14 @@
+[
+{{- $comma := false -}}
+{{- range .Site.RegularPages -}}
+{{- if $comma }},{{ end }}
+{
+    "title": {{ .Title | jsonify }},
+    "description": {{ .Params.description | jsonify }},
+    "url": {{ .RelPermalink | jsonify }},
+    "tags": {{ .Params.tags | jsonify }},
+    "redirect": {{ .Params.redirect | jsonify }}
+}
+{{- $comma = true -}}
+{{- end }}
+]
