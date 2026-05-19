@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/bleeding-lama-cve-2026-7482/</loc>
+    <loc>https://vx0n-labs.github.io/posts/bleeding-lama-cve-2026-7482/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://vx0n-labs.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/cve/</loc>
+    <loc>https://vx0n-labs.github.io/tags/cve/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/guide/</loc>
+    <loc>https://vx0n-labs.github.io/tags/guide/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/how-to-use-this-site/</loc>
+    <loc>https://vx0n-labs.github.io/posts/how-to-use-this-site/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://vx0n-labs.github.io/posts/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/rules/</loc>
+    <loc>https://vx0n-labs.github.io/tags/rules/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://vx0n-labs.github.io/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/vulnerability/</loc>
+    <loc>https://vx0n-labs.github.io/tags/vulnerability/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://vx0n-labs.github.io/</loc>
   </url>
 </urlset>

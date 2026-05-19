@@ -31,7 +31,11 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build Hugo
-        run: hugo
+        run: |
+          ls -la
+          ls -la themes/vxon/layouts/
+          cat themes/vxon/layouts/index.html | head -20
+          hugo
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
