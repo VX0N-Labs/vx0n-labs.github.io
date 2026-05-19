@@ -7,6 +7,7 @@
     "description": {{ .Params.description | jsonify }},
     "url": {{ .RelPermalink | jsonify }},
     "tags": {{ .Params.tags | jsonify }},
+    "author": {{ .Params.author | jsonify }},
     "redirect": {{ .Params.redirect | jsonify }}
 }
 {{- $comma = true -}}

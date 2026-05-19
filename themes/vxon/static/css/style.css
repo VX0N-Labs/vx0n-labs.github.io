@@ -228,6 +228,12 @@ a {
     margin-bottom: 0.5rem;
 }
 
+.result-author {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
 .result-tags {
     display: flex;
     gap: 0.4rem;
