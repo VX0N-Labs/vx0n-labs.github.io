@@ -14,10 +14,10 @@
     "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 },
 {
-    "title": "New CVE Analysis",
-    "description": "Security research",
+    "title": "Test CVE Analysis",
+    "description": "Example post for testing search functionality",
     "url": "/posts/test/",
-    "tags": ["cve","research"],
-    "redirect": "https://external-url.com/post/"
+    "tags": ["cve","research","test"],
+    "redirect": null
 }
 ]

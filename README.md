@@ -54,5 +54,5 @@ redirect: "https://external-site.com/posts/your-post/"
 ## Future work
 - [ ] Build the rendering engine so the md files can be render properly
 - [ ] Add in a way to automatically get user blogs
-- [ ] Make the UI/UX better 
+- [ ] Make the UI/UX better for android
 - [ ] Add in search filters
