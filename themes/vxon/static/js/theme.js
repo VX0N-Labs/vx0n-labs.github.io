@@ -29,4 +29,4 @@ if (toggle) {
         updateTheme(!isLight);
         localStorage.setItem('theme', isLight ? 'dark' : 'light');
     });
-}
+} 
