@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'VXON'
 description = 'Security research platform for CVE analysis, vulnerability research, and technical writeups.'
 theme = 'vxon'
+defaultContentLanguage = 'en'
 
 [outputs]
 home = ["HTML", "JSON"]
