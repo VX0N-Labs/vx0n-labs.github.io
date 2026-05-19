@@ -1,6 +1,6 @@
 # VXON
 
-Site for CVE analysis, vulnerability research, and technical writeups.
+Security research platform for CVE analysis, vulnerability research, and technical writeups.
 
 ## Quick Start
 
@@ -9,6 +9,10 @@ hugo server
 ```
 
 Visit `http://localhost:1313`
+
+## Deploy to GitHub Pages
+
+Push to `main` branch and the GitHub Actions workflow will auto-deploy.
 
 ## Submitting Content
 
@@ -49,3 +53,6 @@ redirect: "https://external-site.com/posts/your-post/"
 
 ## Future work
 - [ ] Build the rendering engine so the md files can be render properly
+- [ ] Add in a way to automatically get user blogs
+- [ ] Make the UI/UX better 
+- [ ] Add in search filters
