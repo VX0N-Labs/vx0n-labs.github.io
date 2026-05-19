@@ -1,8 +1,3 @@
----
-title: "How to Use This Site"
-description: "Complete guide on submitting posts, understanding front matter, and how redirects work"
-tags: ["guide", "rules"]
----
 
 # How to Use This Site
 
