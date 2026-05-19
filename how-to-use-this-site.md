@@ -32,8 +32,9 @@ redirect: "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 |-------|-------|--------------|
 | `title` | `"Bleeding Lama CVE-2026-7482"` | Shows in search results and page header |
 | `description` | `"Critical vulnerability in Lama framework"` | Shows below title in search results |
+| `author` | `"wrench"` | Displays the article author name |
 | `tags` | `["cve", "vulnerability"]` | Categories for filtering in search |
-| `redirect` | `"https://w3nch.github.io/..."` | **Optional** - Redirects users to external URL |
+| `redirect` | `"https://w3nch.github.io/..."` | Optional — redirects users to an external URL |
 
 ### How Each Field Works:
 
@@ -63,6 +64,7 @@ redirect: "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 ---
 title: "My Research"
 description: "Custom research content"
+author: "Someone like wrench"
 tags: ["research"]
 ---
 
@@ -76,6 +78,7 @@ Your full post content here in Markdown.
 ---
 title: "My Research"
 description: "Link to my research on another site"
+author: "Someone like mikey"
 tags: ["research"]
 redirect: "https://external-site.com/my-research/"
 ---
@@ -88,7 +91,7 @@ redirect: "https://external-site.com/my-research/"
 1. Create a new `.md` file in `content/posts/`
 2. Add proper front matter
 3. Either add content or use `redirect`
-4. Submit a pull request or push to main branch
+4. Submit a pull request
 
 ## Search
 

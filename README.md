@@ -8,42 +8,17 @@ Security research platform for CVE analysis, vulnerability research, and technic
 hugo server
 ```
 
-Visit `http://localhost:1313`
-
-## Deploy to GitHub Pages
-
-Push to `main` branch and the GitHub Actions workflow will auto-deploy.
+Visit `http://localhost ;D`
 
 ## Submitting Content
-
-### Local Post
-Create a new file in `content/posts/`:
-```yaml
----
-title: "Your Post Title"
-description: "Brief description"
-tags: ["tag1", "tag2"]
----
-
-Your content here.
-```
-
-### External Redirect (recommend)
-```yaml
----
-title: "External Post"
-description: "Description"
-tags: ["vulnerability"]
-redirect: "https://external-site.com/posts/your-post/"
----
-```
+Follow  ![how to use this site](https://github.com/VX0N-Labs/vx0n-labs.github.io/blob/main/how-to-use-this-site.md)
 
 ## Rules
 
-- No copyrighted content
-- No malicious material
-- Security research focus
-- Descriptive titles and tags
+1. No copyrighted content
+2. No malicious material
+3. Security research focus only
+4. Use descriptive titles and tags
 
 ## Stack
 
