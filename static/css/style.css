@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+:root {
+    --bg-primary: #000000;
+    --bg-secondary: #1d1d1f;
+    --bg-card: #2d2d2f;
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --accent: #0a84ff;
+    --border: #424245;
+    --hover-bg: #2d2d2f;
+}
+
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --bg-card: #fafafa;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent: #0071e3;
+    --border: #d2d2d7;
+    --hover-bg: #f0f0f0;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.github-btn, #theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.github-btn:hover, #theme-toggle:hover {
+    background: var(--hover-bg);
+    border-color: var(--text-secondary);
+}
+
+.github-btn svg, #theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-primary);
+}
+
+#theme-toggle {
+    padding: 0.5rem 0.7rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    padding: 0 1.5rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.links a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: var(--accent);
+}
+
+.links span {
+    color: var(--text-secondary);
+    opacity: 0.4;
+}
+
+.search-wrapper {
+    width: 100%;
+    margin: 0 auto 1.5rem;
+}
+
+.search-container {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.search-container:focus-within {
+    border-color: var(--accent);
+}
+
+#search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    -webkit-appearance: none;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.results {
+    width: 100%;
+}
+
+.result-card {
+    padding: 1rem 0.25rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.result-card:hover {
+    background: var(--bg-card);
+}
+
+.result-title {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+.result-url {
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.result-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.result-tags {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.result-tag {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+}
+
+@media (max-width: 640px) {
+    .logo {
+        font-size: 2.2rem;
+    }
+}
