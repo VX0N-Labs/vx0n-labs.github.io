@@ -222,6 +222,12 @@ a {
     line-height: 1.4;
 }
 
+.author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
 .result-tags {
     display: flex;
     gap: 0.4rem;
