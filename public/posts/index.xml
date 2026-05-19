@@ -14,19 +14,5 @@
       <guid>https://vx0n-labs.github.io/posts/bleeding-lama-cve-2026-7482/</guid>
       <description></description>
     </item>
-    <item>
-      <title>How to Use This Site</title>
-      <link>https://vx0n-labs.github.io/posts/how-to-use-this-site/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vx0n-labs.github.io/posts/how-to-use-this-site/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Test CVE Analysis</title>
-      <link>https://vx0n-labs.github.io/posts/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vx0n-labs.github.io/posts/test/</guid>
-      <description>Test CVE Analysis This is a test post to verify the search functionality is working correctly.&#xA;Search for: test, cve, research to find this post.</description>
-    </item>
   </channel>
 </rss>

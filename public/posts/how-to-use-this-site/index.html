@@ -28,9 +28,135 @@
 
         <main class="container">
 
-<script>
-  window.location.href = "https:\/\/w3nch.github.io\/posts\/bleeding-lama-cve-2026-7482\/";
-</script>
+  <h1>How to Use This Site</h1>
+
+  
+  
+  <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+
+  <h1 id="how-to-use-this-site">How to Use This Site</h1>
+<h2 id="understanding-the-front-matter">Understanding the Front Matter</h2>
+<p>Every post starts with <strong>front matter</strong> - the section between <code>---</code> markers at the top of the file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Your Post Title&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Brief description of your post&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;tag1&#34;</span>, <span style="color:#e6db74">&#34;tag2&#34;</span>]
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h2 id="step-by-step-breakdown">Step-by-Step Breakdown</h2>
+<p>Let&rsquo;s use this real example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Bleeding Lama CVE-2026-7482&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Critical vulnerability in Lama framework&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;cve&#34;</span>, <span style="color:#e6db74">&#34;vulnerability&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">redirect</span>: <span style="color:#e6db74">&#34;https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/&#34;</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h3 id="line-by-line-explanation">Line by Line Explanation:</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>&quot;Bleeding Lama CVE-2026-7482&quot;</code></td>
+<td>Shows in search results and page header</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>&quot;Critical vulnerability in Lama framework&quot;</code></td>
+<td>Shows below title in search results</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>[&quot;cve&quot;, &quot;vulnerability&quot;]</code></td>
+<td>Categories for filtering in search</td>
+</tr>
+<tr>
+<td><code>redirect</code></td>
+<td><code>&quot;https://w3nch.github.io/...&quot;</code></td>
+<td><strong>Optional</strong> - Redirects users to external URL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-each-field-works">How Each Field Works:</h3>
+<h4 id="1-title-required">1. <code>title</code> (Required)</h4>
+<ul>
+<li>The title of your post</li>
+<li>Appears in search results</li>
+<li>Shown at the top of your post page</li>
+</ul>
+<h4 id="2-description-optional-but-recommended">2. <code>description</code> (Optional but recommended)</h4>
+<ul>
+<li>Brief summary of your post</li>
+<li>Shows in search result cards</li>
+<li>Helps users understand content before clicking</li>
+</ul>
+<h4 id="3-tags-optional">3. <code>tags</code> (Optional)</h4>
+<ul>
+<li>Array of category words</li>
+<li>Users can search by tags</li>
+<li>Example: <code>[&quot;cve&quot;, &quot;windows&quot;, &quot;exploit&quot;]</code></li>
+</ul>
+<h4 id="4-redirect-optional">4. <code>redirect</code> (Optional)</h4>
+<ul>
+<li><strong>If included</strong>: Users are redirected to the external URL</li>
+<li><strong>If omitted</strong>: Users see your post content normally</li>
+</ul>
+<h2 id="two-types-of-posts">Two Types of Posts</h2>
+<h3 id="type-1-local-post-no-redirect">Type 1: Local Post (No Redirect)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;My Research&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Custom research content&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;research&#34;</span>]
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># My Research</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Your full post content here in Markdown.</span>
+</span></span></code></pre></div><h3 id="type-2-external-redirect-post">Type 2: External Redirect Post</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;My Research&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Link to my research on another site&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;research&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">redirect</span>: <span style="color:#e6db74">&#34;https://external-site.com/my-research/&#34;</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p><strong>Note</strong>: When using <code>redirect</code>, you don&rsquo;t need to write content below the front matter.</p>
+<h2 id="how-to-submit">How to Submit</h2>
+<ol>
+<li>Create a new <code>.md</code> file in <code>content/posts/</code></li>
+<li>Add proper front matter</li>
+<li>Either add content or use <code>redirect</code></li>
+<li>Submit a pull request or push to main branch</li>
+</ol>
+<h2 id="search">Search</h2>
+<p>Use the search bar to find posts by:</p>
+<ul>
+<li>Title keywords</li>
+<li>Description text</li>
+<li>Tags</li>
+</ul>
+<p>Example: Search for <code>cve</code> to find posts tagged with &ldquo;cve&rdquo;.</p>
+<h2 id="rules">Rules</h2>
+<ol>
+<li>No copyrighted content</li>
+<li>No malicious material</li>
+<li>Security research focus only</li>
+<li>Use descriptive titles and tags</li>
+</ol>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/guide/">Guide</a></li>
+        <li><a href="/tags/rules/">Rules</a></li>
+    </ul>
+  </div>
+
 
 </main>
 

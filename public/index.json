@@ -5,19 +5,5 @@
     "url": "/posts/bleeding-lama-cve-2026-7482/",
     "tags": ["cve","vulnerability"],
     "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
-},
-{
-    "title": "How to Use This Site",
-    "description": "Guide on submitting posts, understanding redirects, and following the rules.",
-    "url": "/posts/how-to-use-this-site/",
-    "tags": ["guide","rules"],
-    "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
-},
-{
-    "title": "Test CVE Analysis",
-    "description": "Example post for testing search functionality",
-    "url": "/posts/test/",
-    "tags": ["cve","research","test"],
-    "redirect": null
 }
 ]

@@ -12,7 +12,7 @@
       <link>https://vx0n-labs.github.io/posts/how-to-use-this-site/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vx0n-labs.github.io/posts/how-to-use-this-site/</guid>
-      <description></description>
+      <description>How to Use This Site Understanding the Front Matter Every post starts with front matter - the section between --- markers at the top of the file.&#xA;--- title: &amp;#34;Your Post Title&amp;#34; description: &amp;#34;Brief description of your post&amp;#34; tags: [&amp;#34;tag1&amp;#34;, &amp;#34;tag2&amp;#34;] --- Step-by-Step Breakdown Let&amp;rsquo;s use this real example:&#xA;--- title: &amp;#34;Bleeding Lama CVE-2026-7482&amp;#34; description: &amp;#34;Critical vulnerability in Lama framework&amp;#34; tags: [&amp;#34;cve&amp;#34;, &amp;#34;vulnerability&amp;#34;] redirect: &amp;#34;https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/&amp;#34; --- Line by Line Explanation: Field Value What it does title &amp;quot;Bleeding Lama CVE-2026-7482&amp;quot; Shows in search results and page header description &amp;quot;Critical vulnerability in Lama framework&amp;quot; Shows below title in search results tags [&amp;quot;cve&amp;quot;, &amp;quot;vulnerability&amp;quot;] Categories for filtering in search redirect &amp;quot;https://w3nch.</description>
     </item>
   </channel>
 </rss>
