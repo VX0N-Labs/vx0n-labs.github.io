@@ -12,5 +12,12 @@
     "url": "/posts/how-to-use-this-site/",
     "tags": ["guide","rules"],
     "redirect": "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
+},
+{
+    "title": "New CVE Analysis",
+    "description": "Security research",
+    "url": "/posts/test/",
+    "tags": ["cve","research"],
+    "redirect": "https://external-url.com/post/"
 }
 ]
