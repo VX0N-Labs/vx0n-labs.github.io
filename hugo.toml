@@ -1,4 +1,4 @@
-baseURL = 'https://vxon.github.io/'
+baseURL = 'https://vx0n-labs.github.io/'
 languageCode = 'en-us'
 title = 'VXON'
 description = 'Security research platform for CVE analysis, vulnerability research, and technical writeups.'
