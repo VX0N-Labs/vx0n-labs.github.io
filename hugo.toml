@@ -1,6 +1,7 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
-title = 'Research Search'
+title = 'VXON'
+description = 'Security research platform for CVE analysis, vulnerability research, and technical writeups.'
 theme = 'vxon'
 
 [outputs]

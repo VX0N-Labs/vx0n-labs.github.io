@@ -1,6 +1,6 @@
 # VXON
 
-Security research platform for sharing writeups, CVE analysis, and technical research.
+Site for CVE analysis, vulnerability research, and technical writeups.
 
 ## Quick Start
 
@@ -24,7 +24,7 @@ tags: ["tag1", "tag2"]
 Your content here.
 ```
 
-### External Redirect
+### External Redirect (recommend)
 ```yaml
 ---
 title: "External Post"
@@ -46,3 +46,6 @@ redirect: "https://external-site.com/posts/your-post/"
 - Hugo
 - Vanilla CSS/JS
 - No frameworks
+
+## Future work
+- [ ] Build the rendering engine so the md files can be render properly
