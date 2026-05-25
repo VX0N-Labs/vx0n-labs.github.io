@@ -36,6 +36,39 @@
     --hover-bg: #f0f0f0;
 }
 
+[data-theme="cyberpunk"] {
+    --bg-primary: #0d0221;
+    --bg-secondary: #1a0a3e;
+    --bg-card: #2a1050;
+    --text-primary: #00fff7;
+    --text-secondary: #ff2d95;
+    --accent: #ff2d95;
+    --border: #ff2d95;
+    --hover-bg: #2a1050;
+}
+
+[data-theme="matrix"] {
+    --bg-primary: #000000;
+    --bg-secondary: #0a1a0a;
+    --bg-card: #0f2a0f;
+    --text-primary: #00ff41;
+    --text-secondary: #008f28;
+    --accent: #00ff41;
+    --border: #00ff41;
+    --hover-bg: #0f2a0f;
+}
+
+[data-theme="sepia"] {
+    --bg-primary: #fbf1c7;
+    --bg-secondary: #ebdbb2;
+    --bg-card: #d5c4a1;
+    --text-primary: #3c3836;
+    --text-secondary: #7c6f64;
+    --accent: #d65d0e;
+    --border: #bdae93;
+    --hover-bg: #d5c4a1;
+}
+
 body {
     background: var(--bg-primary);
     color: var(--text-primary);
@@ -70,33 +103,82 @@ a {
     gap: 0.5rem;
 }
 
-.github-btn, #theme-toggle {
+.cmd-btn, #theme-toggle {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    min-width: 160px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    background: transparent;
+    border: 1px solid var(--border, #333);
+    border-radius: 0;
+    font-size: 0.82rem;
+    font-family: "Courier New", Courier, monospace;
     color: var(--text-primary);
     cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s ease;
+    text-decoration: none;
+    transition: all 0.15s ease;
 }
 
-.github-btn:hover, #theme-toggle:hover {
+.cmd-btn:hover, #theme-toggle:hover {
+    background: var(--accent-bg, rgba(255,255,255,0.05));
+    border-color: var(--text-secondary, #888);
+}
+
+.cmd-btn .prompt {
+    color: var(--accent, #888);
+    user-select: none;
+}
+
+.theme-wrap {
+    position: relative;
+}
+
+#theme-trigger {
+    gap: 0.3rem;
+}
+
+#theme-trigger .arrow {
+    font-size: 0.5rem;
+    margin-left: 0.2rem;
+}
+
+#theme-current {
+    color: var(--accent, #888);
+}
+
+.theme-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    min-width: 160px;
+    z-index: 100;
+}
+
+.theme-menu.open {
+    display: block;
+}
+
+.theme-menu button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.9rem;
+    background: transparent;
+    border: none;
+    font-size: 0.82rem;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s ease;
+}
+
+.theme-menu button:hover {
     background: var(--hover-bg);
-    border-color: var(--text-secondary);
-}
-
-.github-btn svg, #theme-toggle svg {
-    width: 18px;
-    height: 18px;
-    fill: var(--text-primary);
+    color: var(--accent);
 }
 
 .container {
