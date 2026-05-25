@@ -1,0 +1,45 @@
+{{ define "main" }}
+<style>
+  .secret-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+  }
+  .secret-page h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  .secret-page .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--accent, #888);
+    margin: 1.5rem auto;
+    opacity: 0.4;
+  }
+  .secret-page p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary, #999);
+    margin: 0.3rem 0;
+  }
+  .secret-page .glow {
+    font-size: 2rem;
+    margin-top: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+</style>
+<div class="secret-page">
+  <h1>{{ .Title }}</h1>
+  <div class="divider"></div>
+  <p>Only a select few know about this page.</p>
+  <p>And now you're one of them.</p>
+  <div class="glow">✦</div>
+</div>
+{{ end }}

@@ -1,0 +1,78 @@
+{{ define "main" }}
+<style>
+  .team-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  .team-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .team-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .team-header .date {
+    font-size: 0.8rem;
+    color: var(--text-secondary, #666);
+    font-family: monospace;
+  }
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .team-card {
+    background: var(--bg-secondary, #111);
+    border: 1px solid var(--border, #2a2a2a);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .team-card:hover {
+    border-color: var(--text-secondary, #555);
+  }
+  .team-card .name {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .team-card .role {
+    font-size: 0.8rem;
+    color: var(--accent, #888);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.15rem;
+    margin-bottom: 0.6rem;
+  }
+  .team-card .bio {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-secondary, #999);
+  }
+  .team-card .bio code {
+    font-size: 0.85rem;
+    background: var(--bg, #000);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+  }
+</style>
+
+<div class="team-page">
+  <div class="team-header">
+    <h1>{{ .Title }}</h1>
+    <div class="date">January 33, 7</div>
+  </div>
+
+  <div class="team-list">
+    <div class="team-card">
+      <div class="name">Wrench</div>
+      <div class="role">Web & Forensics</div>
+      <div class="bio">Handles web security and forensics. Keeps things running and makes sure nobody breaks production. Again.</div>
+    </div>
+
+  </div>
+</div>
+{{ end }}

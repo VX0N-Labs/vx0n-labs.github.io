@@ -73,8 +73,10 @@ a {
 .github-btn, #theme-toggle {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
+    min-width: 160px;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -95,10 +97,6 @@ a {
     width: 18px;
     height: 18px;
     fill: var(--text-primary);
-}
-
-#theme-toggle {
-    padding: 0.5rem 0.7rem;
 }
 
 .container {

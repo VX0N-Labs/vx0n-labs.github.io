@@ -1,6 +1,7 @@
 [
 {{- $comma := false -}}
 {{- range .Site.RegularPages -}}
+{{- if .Params.hidden }}{{ continue }}{{ end -}}
 {{- if $comma }},{{ end }}
 {
     "title": {{ .Title | jsonify }},
