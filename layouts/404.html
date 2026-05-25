@@ -1,0 +1,53 @@
+{{ define "main" }}
+<style>
+  .error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+  }
+  .error-page .code {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--accent, #888);
+    line-height: 1;
+  }
+  .error-page .line {
+    width: 60px;
+    height: 1px;
+    background: var(--border, #333);
+    margin: 1.5rem 0;
+  }
+  .error-page .msg {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #888);
+    font-family: "Courier New", Courier, monospace;
+    margin-bottom: 0.3rem;
+  }
+  .error-page .msg .prompt {
+    color: var(--accent, #888);
+  }
+  .error-page .blink {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  .error-page .back {
+    margin-top: 2rem;
+  }
+</style>
+<div class="error-page">
+  <div class="code">404</div>
+  <div class="line"></div>
+  <div class="msg"><span class="prompt">$</span> page not found</div>
+  <div class="msg"><span class="prompt">$</span> maybe it was never here<span class="blink">_</span></div>
+  <div class="back">
+    <a href="/" class="cmd-btn"><span class="prompt">$</span> /home</a>
+  </div>
+</div>
+{{ end }}

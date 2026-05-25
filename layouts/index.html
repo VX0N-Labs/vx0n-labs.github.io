@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <section class="hero">
-    <h1 class="logo">VXON</h1>
+    <h1 id="logo" class="logo">VXON</h1>
 
     <div class="links">
         <a href="https://github.com/VX0N-Labs/vxon.github.io"> Github </a>
@@ -34,5 +34,37 @@
 <section id="results" class="results"></section>
 
 <script src="/js/search.js"></script>
+
+<script>
+(function () {
+    var el = document.getElementById('logo');
+    var chars = '0123456789';
+    var start = Date.now();
+    var ticks = [3, 7, 1, 9];
+
+    function scrollChar(i) {
+        ticks[i] = (ticks[i] + 1) % chars.length;
+        return chars[ticks[i]];
+    }
+
+    function animate() {
+        var elapsed = Date.now() - start;
+
+        if (elapsed < 1200) {
+            var r = '';
+            for (var i = 0; i < 4; i++) r += scrollChar(i);
+            el.textContent = r;
+            requestAnimationFrame(animate);
+        } else {
+            el.textContent = '1337';
+            setTimeout(function () {
+                el.textContent = 'VXON';
+            }, 400);
+        }
+    }
+
+    animate();
+})();
+</script>
 
 {{ end }}
