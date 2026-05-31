@@ -1,39 +1,14 @@
 ---
 title: "Mikey"
 role: "Web & OSINT"
-bio: "Handles web security and OSINT. Keep exploring. THis is test THis is test THis is test THis is test THis is test THis is test
-
-
- THis is test THis is test THis is test THis is test
- THis is test THis is test THis is test
- THis is test THis is test THis is test
-
-
- THis is test THis is test
- THis is test
- THis is test
- THis is test
- THis is test
-
- THis is test THis is test
- 
-"
+bio: "Handles web security and OSINT. Keep exploring."
 links:
   - label: "GitHub"
-    url: "https://github.com/wrench"
+    url: "https://github.com/sharma-abhi9av/"
   - label: "Hack the box"
-    url: "https://aap.hackthebox.com/profile/"
-  - label: "LinkedIN"
-    url: "https://github.com/wrench"
-  - label: "Insta"
-    url: "https://aap.hackthebox.com/profile/"
-  - label: "randomsite.com"
-    url: "https://github.com/wrench"
+    url: "https://app.hackthebox.com/users/2142022"
+  - label: "Portfolio"
+    url: "https://sharma-abhi9av.github.io"
   - label: "Leetcode"
-    url: "https://aap.hackthebox.com/profile/"
-  - label: "Codeforces"
-    url: "https://github.com/wrench"
-  - label: "pwnedlabs"
-    url: "https://aap.hackthebox.com/profile/"
-
+    url: "https://leetcode.com/u/sharma_abhi9av/"
 ---
