@@ -22,6 +22,7 @@ async function initSearch() {
                 </a>
                 <div class="result-url">${article.redirect ? article.redirect : window.location.origin + article.url}</div>
                 
+                <div class="result-author">${article.author ? "by " + article.author : ""}</div>
                 <div class="result-description">
                     ${article.description || "No description available"}
                 </div>
@@ -59,25 +60,37 @@ async function initSearch() {
     }
   });
 
-  render(articles, false);
+  render(articles, true);
 
   input.addEventListener("input", () => {
     clearTimeout(currentTimeout);
 
     currentTimeout = setTimeout(() => {
-      const keyword = input.value.toLowerCase();
+      const raw = input.value;
+      const keyword = raw.toLowerCase();
+      const isTagSearch = keyword.startsWith("#");
 
       const filtered = articles.filter((article) => {
+        if (isTagSearch) {
+          const tagQuery = keyword.slice(1).trim();
+          if (!tagQuery) return false;
+          return (
+            article.tags &&
+            article.tags.some((t) => t.toLowerCase().includes(tagQuery))
+          );
+        }
         return (
           article.title.toLowerCase().includes(keyword) ||
           (article.description &&
             article.description.toLowerCase().includes(keyword)) ||
           (article.tags &&
-            article.tags.join(" ").toLowerCase().includes(keyword))
+            article.tags.join(" ").toLowerCase().includes(keyword)) ||
+          (article.author &&
+            article.author.toLowerCase().includes(keyword))
         );
       });
 
-      render(filtered, keyword.length > 0);
+      render(filtered, true);
     }, 150);
   });
 }

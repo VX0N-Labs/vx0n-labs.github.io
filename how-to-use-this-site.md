@@ -32,6 +32,7 @@ redirect: "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 |-------|-------|--------------|
 | `title` | `"Bleeding Lama CVE-2026-7482"` | Shows in search results and page header |
 | `description` | `"Critical vulnerability in Lama framework"` | Shows below title in search results |
+| `author` | `"wrench"` | Shows who wrote the post |
 | `tags` | `["cve", "vulnerability"]` | Categories for filtering in search |
 | `redirect` | `"https://w3nch.github.io/..."` | Optional — redirects users to an external URL |
 

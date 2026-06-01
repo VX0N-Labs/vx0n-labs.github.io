@@ -20,7 +20,7 @@
                     <button id="theme-trigger" class="cmd-btn"><span class="prompt">$</span> /theme <span id="theme-current">dark</span> <span class="arrow">&#9660;</span></button>
                     <div id="theme-menu" class="theme-menu">
                         <button data-value="dark">dark</button>
-                        <button data-value="light">light</button>
+                        <button data-value="light">make me blind</button>
                         <button data-value="cyberpunk">cyberpunk</button>
                         <button data-value="matrix">matrix</button>
                         <button data-value="sepia">sepia</button>
@@ -123,7 +123,7 @@
                 } else {
                     html.setAttribute('data-theme', theme);
                 }
-                currentLabel.textContent = theme;
+                currentLabel.textContent = theme === 'light' ? 'make me blind' : theme;
             }
 
             const saved = localStorage.getItem('theme') || 'dark';
@@ -154,9 +154,14 @@
                 const messages = [
                     'Come back to Vxon Team!',
                     'Don\'t leave us!',
-                    'We miss you! 🥺',
-                    '🚨 Still here?',
+                    'We miss you!',
+                    'Still here?',
                     'You forgot something!',
+                    'We have cookies!',
+                    'Your team is waiting for you.',
+                    'It\'s quiet without you.',
+                    'Come say hi!',
+                    'New writeups just dropped!',
                 ];
                 let intervalId = null;
                 let index = 0;
@@ -168,7 +173,7 @@
                     intervalId = setInterval(function () {
                         index = (index + 1) % messages.length;
                         document.title = messages[index];
-                    }, 2000);
+                    }, 5000);
                 }
 
                 function stopCycling() {

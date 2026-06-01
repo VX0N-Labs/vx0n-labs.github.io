@@ -1,11 +1,12 @@
 [
 {{- $comma := false -}}
 {{- range .Site.RegularPages -}}
-{{- if .Params.hidden }}{{ continue }}{{ end -}}
+{{- if or .Params.hidden (eq .Section "team") }}{{ continue }}{{ end -}}
 {{- if $comma }},{{ end }}
 {
     "title": {{ .Title | jsonify }},
     "description": {{ .Params.description | jsonify }},
+    "author": {{ .Params.author | jsonify }},
     "url": {{ .RelPermalink | jsonify }},
     "tags": {{ .Params.tags | jsonify }},
     "redirect": {{ .Params.redirect | jsonify }}

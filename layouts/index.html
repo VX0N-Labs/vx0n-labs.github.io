@@ -30,11 +30,24 @@
             autocomplete="off"
         />
     </div>
+    <div class="search-buttons">
+        <button id="surprise-btn" class="lucky-btn">I'm Feeling Lucky</button>
+    </div>
 </div>
 
 <section id="results" class="results"></section>
 
 <script src="/js/search.js"></script>
+
+<script>
+document.getElementById("surprise-btn").addEventListener("click", async function () {
+    var res = await fetch("/index.json");
+    var articles = await res.json();
+    if (!articles.length) return;
+    var pick = articles[Math.floor(Math.random() * articles.length)];
+    window.location.href = pick.redirect || pick.url;
+});
+</script>
 
 <script>
 (function () {
