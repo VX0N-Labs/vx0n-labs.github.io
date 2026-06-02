@@ -4,14 +4,26 @@
   window.location.href = "{{ .Params.redirect }}";
 </script>
 {{ else }}
-  <h1>{{ .Title }}</h1>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-  {{ with .Params.author }} · <span class="author">by {{ . }}</span>{{ end }}
-
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+      {{ with .Params.author }}<span class="post-author">by {{ . }}</span>{{ end }}
+    </div>
+    {{ with .Params.tags }}
+    <div class="post-tags" style="margin-top: 0.75rem;">
+      {{ range . }}
+      <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
 {{ end }}
 {{ end }}

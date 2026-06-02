@@ -41,11 +41,15 @@
 
 <script>
 document.getElementById("surprise-btn").addEventListener("click", async function () {
-    var res = await fetch("/index.json");
-    var articles = await res.json();
-    if (!articles.length) return;
-    var pick = articles[Math.floor(Math.random() * articles.length)];
-    window.location.href = pick.redirect || pick.url;
+    try {
+        var res = await fetch("/index.json");
+        var articles = await res.json();
+        if (!articles.length) return;
+        var pick = articles[Math.floor(Math.random() * articles.length)];
+        window.location.href = pick.redirect || pick.url;
+    } catch (e) {
+        console.error("Surprise me failed:", e);
+    }
 });
 </script>
 

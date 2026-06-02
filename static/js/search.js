@@ -1,9 +1,16 @@
 async function initSearch() {
-  const response = await fetch("/index.json");
-  const articles = await response.json();
-
   const input = document.getElementById("search-input");
   const results = document.getElementById("results");
+  if (!input || !results) return;
+
+  let articles;
+  try {
+    const response = await fetch("/index.json");
+    articles = await response.json();
+  } catch {
+    results.innerHTML = "<p style='color:var(--text-secondary);padding:1rem;'>Failed to load articles. Please refresh.</p>";
+    return;
+  }
 
   let currentTimeout;
 
