@@ -1,5 +1,5 @@
 ---
-title: "HTB-Soulmate"
+title: "Soulmate HTB"
 tags: [Writeup, Easy, Linux]
 author: 6cloudguy
 description: Writeup for the HackTheBox machine "Soulmate"
