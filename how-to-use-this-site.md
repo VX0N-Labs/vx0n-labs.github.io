@@ -9,6 +9,7 @@ Every post starts with **front matter** - the section between `---` markers at t
 ---
 title: "Your Post Title"
 description: "Brief description of your post"
+author: "someone like wrench"
 tags: ["tag1", "tag2"]
 ---
 ```
@@ -21,6 +22,7 @@ Let's use this real example:
 ---
 title: "Bleeding Lama CVE-2026-7482"
 description: "Critical vulnerability in Lama framework"
+author: "someone like mikey"
 tags: ["cve", "vulnerability"]
 redirect: "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 ---
@@ -64,6 +66,7 @@ redirect: "https://w3nch.github.io/posts/bleeding-lama-cve-2026-7482/"
 ---
 title: "My Research"
 description: "Custom research content"
+author: "someone like valkery"
 tags: ["research"]
 ---
 
@@ -77,6 +80,7 @@ Your full post content here in Markdown.
 ---
 title: "My Research"
 description: "Link to my research on another site"
+author: "someone like kin"
 tags: ["research"]
 redirect: "https://external-site.com/my-research/"
 ---
