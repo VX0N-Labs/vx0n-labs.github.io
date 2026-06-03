@@ -1,10 +1,14 @@
 ---
 title: "🔮 VXON"
+date: 2022-06-02
 hidden: true
 ---
 
-Only a select few know about this page.
+Flag Status: Not Found
 
-And now you're one of them.
+This isn't a challenge.
+There isn't a flag hidden here.
 
-Welcome.
+Or is there?
+
+Welcome to VXON.

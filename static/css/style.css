@@ -606,3 +606,109 @@ a {
     border-color: var(--accent);
     color: var(--accent);
 }
+
+.cmd-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 99999;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+}
+.cmd-overlay.open {
+    display: flex;
+}
+.cmd-modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    width: 480px;
+    max-width: 90vw;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.cmd-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.cmd-input-wrap .prompt {
+    color: var(--accent, #888);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+#cmd-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--text-primary);
+    outline: none;
+}
+#cmd-input::placeholder {
+    color: var(--text-secondary, #666);
+}
+.cmd-results {
+    max-height: 240px;
+    overflow-y: auto;
+}
+.cmd-result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: background 0.1s;
+}
+.cmd-result-item:hover,
+.cmd-result-item.highlighted {
+    background: var(--hover-bg, rgba(255,255,255,0.05));
+}
+.cmd-result-item .path {
+    color: var(--accent, #888);
+    font-size: 0.8rem;
+}
+
+#reading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+#top-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+#top-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.post-tags-header {
+    margin-top: 0.75rem;
+}

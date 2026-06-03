@@ -27,7 +27,7 @@ Follow  [how to use this site](https://github.com/VX0N-Labs/vx0n-labs.github.io/
 - No frameworks
 
 ## Future work
-- [ ] Build the rendering engine so the md files can be render properly
+- [x] Build the rendering engine so the md files can be render properly
 - [ ] Add in a way to automatically get user blogs
-- [ ] Make the UI/UX better for android
+- [x] Make the UI/UX better for android
 - [ ] Add in search filters

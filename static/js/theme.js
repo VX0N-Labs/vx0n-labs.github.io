@@ -1,32 +1,42 @@
-const toggle = document.getElementById('theme-toggle');
-const text = document.getElementById('theme-text');
-const iconDark = document.getElementById('theme-icon-dark');
-const iconLight = document.getElementById('theme-icon-light');
-const html = document.documentElement;
+(function () {
+  var html = document.documentElement;
+  var trigger = document.getElementById("theme-trigger");
+  var menu = document.getElementById("theme-menu");
+  var currentLabel = document.getElementById("theme-current");
 
-function updateTheme(isLight) {
-    if (isLight) {
-        html.setAttribute('data-theme', 'light');
-        iconDark.style.display = 'none';
-        iconLight.style.display = 'inline';
-        text.textContent = 'Dark mode on';
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      html.removeAttribute("data-theme");
     } else {
-        html.removeAttribute('data-theme');
-        iconDark.style.display = 'inline';
-        iconLight.style.display = 'none';
-        text.textContent = 'Make me blind';
+      html.setAttribute("data-theme", theme);
     }
-}
+    currentLabel.textContent = theme === "light" ? "make me blind" : theme;
+  }
 
-const saved = localStorage.getItem('theme');
-if (saved === 'light') {
-    updateTheme(true);
-}
+  var saved = localStorage.getItem("theme") || "dark";
+  applyTheme(saved);
 
-if (toggle) {
-    toggle.addEventListener('click', () => {
-        const isLight = html.getAttribute('data-theme') === 'light';
-        updateTheme(!isLight);
-        localStorage.setItem('theme', isLight ? 'dark' : 'light');
+  if (trigger) {
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      menu.classList.toggle("open");
     });
-} 
+  }
+
+  if (menu) {
+    menu.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var theme = this.dataset.value;
+        applyTheme(theme);
+        localStorage.setItem("theme", theme);
+        menu.classList.remove("open");
+      });
+    });
+  }
+
+  document.addEventListener("click", function () {
+    if (menu) menu.classList.remove("open");
+  });
+
+  window.__applyTheme = applyTheme;
+})();
