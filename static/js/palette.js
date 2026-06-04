@@ -35,7 +35,8 @@
     overlay.classList.add("open");
     input.value = "";
     results.innerHTML = "";
-    renderCommands(getCurrentList());
+    lastFiltered = getCurrentList();
+    renderCommands(lastFiltered);
     setTimeout(function () { input.focus(); }, 50);
   }
 
@@ -48,6 +49,7 @@
     if (cmd.group === "theme") {
       currentGroup = "theme";
       input.value = "";
+      lastFiltered = themeCommands;
       renderCommands(themeCommands);
       highlightedIndex = 0;
       return;
@@ -56,6 +58,8 @@
     if (cmd.action === "theme") {
       if (window.__applyTheme) window.__applyTheme(cmd.value);
       localStorage.setItem("theme", cmd.value);
+      var cl = document.getElementById("theme-current");
+      if (cl) cl.textContent = cmd.value === "light" ? "make me blind" : cmd.value;
       return;
     }
     window.location.href = cmd.path;
@@ -102,14 +106,20 @@
       return themeCommands;
     }
 
+    var directTheme = themeCommands.filter(function (cmd) {
+      return cmd.cmd.toLowerCase() === q;
+    });
+    if (directTheme.length === 1) return directTheme;
+
     return filtered;
   }
 
   var highlightedIndex = 0;
+  var lastFiltered = [];
 
   input.addEventListener("input", function () {
-    var filtered = filterCommands(this.value);
-    renderCommands(filtered);
+    lastFiltered = filterCommands(this.value);
+    renderCommands(lastFiltered);
     highlightedIndex = 0;
   });
 
@@ -120,8 +130,7 @@
       var hl = results.querySelector(".highlighted");
       if (hl) {
         var idx = Array.prototype.indexOf.call(items, hl);
-        var filtered = filterCommands(input.value);
-        if (filtered[idx]) navigate(filtered[idx]);
+        if (lastFiltered[idx]) navigate(lastFiltered[idx]);
       }
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -137,7 +146,8 @@
       if (currentGroup) {
         currentGroup = null;
         input.value = "";
-        renderCommands(getCurrentList());
+        lastFiltered = getCurrentList();
+        renderCommands(lastFiltered);
         highlightedIndex = 0;
       } else {
         closePalette();
@@ -155,10 +165,11 @@
         prefix = prefix.trim();
         input.value = prefix;
         highlightedIndex = 0;
-        var reFiltered = filterCommands(prefix);
-        renderCommands(reFiltered);
+        lastFiltered = filterCommands(prefix);
+        renderCommands(lastFiltered);
       } else if (filtered.length === 1) {
         input.value = filtered[0].cmd;
+        lastFiltered = filtered;
         renderCommands(filtered);
         highlightedIndex = 0;
       }

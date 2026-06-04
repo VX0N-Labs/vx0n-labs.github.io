@@ -6,27 +6,36 @@
   window.location.href = "{{ .Params.redirect }}";
 </script>
 {{ else }}
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
-    <div class="post-meta">
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-      {{ with .Params.author }}<span class="post-author">by {{ . }}</span>{{ end }}
+<div class="post-wrapper">
+  <nav class="toc" id="toc">
+    <div class="toc-inner">
+      <strong class="toc-title">Contents</strong>
+      <ul id="toc-list"></ul>
     </div>
-    {{ with .Params.tags }}
-    <div class="post-tags post-tags-header">
-      {{ range . }}
-      <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+  </nav>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      <div class="post-meta">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <span class="post-reading">{{ .ReadingTime }} min read</span>
+        {{ with .Params.author }}<span class="post-author">by {{ . }}</span>{{ end }}
+      </div>
+      {{ with .Params.tags }}
+      <div class="post-tags post-tags-header">
+        {{ range . }}
+        <a href="/tags/{{ . | urlize }}" class="post-tag">{{ . }}</a>
+        {{ end }}
+      </div>
       {{ end }}
+    </header>
+    <div class="post-content">
+      {{ .Content }}
     </div>
-    {{ end }}
-  </header>
-  <div class="post-content">
-    {{ .Content }}
-  </div>
-</article>
+  </article>
+</div>
 <script src="/js/article.js"></script>
 {{ end }}
 {{ end }}

@@ -30,6 +30,7 @@ async function initSearch() {
                 <div class="result-url">${article.redirect ? article.redirect : window.location.origin + article.url}</div>
                 
                 <div class="result-author">${article.author ? "by " + article.author : ""}</div>
+                ${article.redirect ? "" : `<span class="result-reading">${article.reading_time} min read</span>`}
                 <div class="result-description">
                     <span class="result-description-text">${article.description || "No description available"}</span>
                 </div>

@@ -9,7 +9,8 @@
     "author": {{ .Params.author | jsonify }},
     "url": {{ .RelPermalink | jsonify }},
     "tags": {{ .Params.tags | jsonify }},
-    "redirect": {{ .Params.redirect | jsonify }}
+    "redirect": {{ .Params.redirect | jsonify }},
+    "reading_time": {{ .ReadingTime }}
 }
 {{- $comma = true -}}
 {{- end }}
