@@ -238,6 +238,10 @@ a {
     color: var(--text-primary);
 }
 
+[data-theme="cyberpunk"] .result-title {
+    color: #fee801;
+}
+
 [data-theme="cyberpunk"] .logo {
     animation: glitch-logo 2s infinite;
 }
