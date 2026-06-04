@@ -1,7 +1,7 @@
 [
 {{- $comma := false -}}
 {{- range .Site.RegularPages -}}
-{{- if or .Params.hidden (eq .Section "team") }}{{ continue }}{{ end -}}
+{{- if or .Params.hidden (eq .Section "team") (eq .RelPermalink "/vxon/") }}{{ continue }}{{ end -}}
 {{- if $comma }},{{ end }}
 {
     "title": {{ .Title | jsonify }},

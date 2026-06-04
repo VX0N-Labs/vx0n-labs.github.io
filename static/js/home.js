@@ -13,6 +13,12 @@ document.getElementById("surprise-btn").addEventListener("click", async function
 (function () {
   var el = document.getElementById("logo");
   if (!el) return;
+
+  if (localStorage.getItem("logo-anim-played")) {
+    el.textContent = "VXON";
+    return;
+  }
+
   var chars = "0123456789";
   var start = Date.now();
   var ticks = [3, 7, 1, 9];
@@ -32,6 +38,7 @@ document.getElementById("surprise-btn").addEventListener("click", async function
     } else {
       el.textContent = "1337";
       setTimeout(function () { el.textContent = "VXON"; }, 400);
+      localStorage.setItem("logo-anim-played", "1");
     }
   }
 

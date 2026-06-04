@@ -14,6 +14,7 @@
     </head>
 
     <body>
+        <canvas id="matrix-canvas"></canvas>
         <div class="top-bar">
             <div class="top-buttons">
                 <a href="/" class="cmd-btn"><span class="prompt">$</span> /home</a>
@@ -44,6 +45,28 @@
             </div>
         </div>
 
+        <div id="bsod-overlay">
+            <div class="bsod-content">
+                <div class="bsod-face">:(</div>
+                <div class="bsod-title">Your system ran into a problem and needs to restart.</div>
+                <div class="bsod-sub">We're just collecting some error info, and then we'll be back for you.</div>
+                <div class="bsod-progress">
+                    <span id="bsod-pct">0% complete</span>
+                    <div class="bsod-bar"><div id="bsod-fill" class="bsod-fill"></div></div>
+                </div>
+                <div class="bsod-detail">
+                    <p>STOP CODE: VXON_IDLE_TIMEOUT</p>
+                    <p>WHAT FAILED: vxon_core.sys + 0x3f7b2a</p>
+                    <p>MEMORY DUMP: ████████░░░░ 42%</p>
+                </div>
+                <div class="bsod-footer">Press any key or click to restart — vxon.labs</div>
+            </div>
+        </div>
 
+        <footer class="site-footer">
+            If you aren't slopping you aren't making
+        </footer>
+        <script src="/js/matrix.js" defer></script>
+        <script src="/js/idle.js" defer></script>
     </body>
 </html>

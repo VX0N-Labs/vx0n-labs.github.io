@@ -36,21 +36,59 @@
     --hover-bg: #f0f0f0;
 }
 
+[data-theme="cyberpunk"] {
+    --bg-primary: #0d1b2a;
+    --bg-secondary: #1b2d45;
+    --bg-card: #243b56;
+    --text-primary: #fee801;
+    --text-secondary: #54c1e6;
+    --accent: #39c4b6;
+    --border: #9a9f17;
+    --hover-bg: #2a4568;
+}
+
 body {
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 4rem;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+#matrix-canvas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+[data-theme="matrix"] #matrix-canvas {
+    display: block;
+    opacity: 0.35;
+}
+
+[data-theme="cyberpunk"] #matrix-canvas {
+    display: none;
+}
+
+[data-theme="matrix"] #matrix-canvas {
+    opacity: 0.35;
+}
+
+[data-theme="cyberpunk"] #matrix-canvas {
+    opacity: 0.25;
 }
 
 .top-bar {
@@ -105,64 +143,7 @@ a {
     width: 100%;
     max-width: 1200px;
     padding: 0 1.5rem;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-.logo {
-    font-size: 3rem;
-    font-weight: 600;
-    letter-spacing: 4px;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
-}
-
-.links a {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
-.links a:hover {
-    color: var(--accent);
-}
-
-.links span {
-    color: var(--text-secondary);
-    opacity: 0.4;
-}
-
-.search-wrapper {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto 1.5rem;
-}
-
-.search-container {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border);
-    border-radius: 24px;
-    padding: 0.75rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.2s;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.search-container:focus-within {
-    border-color: var(--accent);
+    flex: 1;
 }
 
 #search-input {
@@ -224,6 +205,8 @@ a {
     display: flex;
     flex-direction: column;
     transition: background 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+    height: 220px;
+    overflow: hidden;
 }
 
 .result-card:hover {
@@ -233,6 +216,14 @@ a {
 
 .result-card .result-description {
     flex: 1;
+    overflow: hidden;
+}
+
+.result-description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .result-card .result-tags {
@@ -263,6 +254,15 @@ a {
     color: var(--text-secondary);
     margin-bottom: 0.25rem;
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result-url:hover {
+    overflow: visible;
+    white-space: normal;
+    word-break: break-all;
 }
 
 .result-author {
@@ -611,4 +611,82 @@ a {
 
 .post-tags-header {
     margin-top: 0.75rem;
+}
+
+.site-footer {
+    display: none;
+}
+
+#bsod-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: #106ebe;
+    color: #fff;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#bsod-overlay.open {
+    display: flex;
+}
+
+.bsod-content {
+    max-width: 720px;
+    width: 100%;
+}
+
+.bsod-face {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.bsod-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bsod-sub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.bsod-progress {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+}
+
+.bsod-bar {
+    width: 200px;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    margin-top: 0.3rem;
+    overflow: hidden;
+}
+
+.bsod-fill {
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.bsod-detail {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-family: "Courier New", monospace;
+    opacity: 0.85;
+}
+
+.bsod-footer {
+    font-size: 0.85rem;
+    opacity: 0.7;
 }

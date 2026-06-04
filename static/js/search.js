@@ -31,12 +31,12 @@ async function initSearch() {
                 
                 <div class="result-author">${article.author ? "by " + article.author : ""}</div>
                 <div class="result-description">
-                    ${article.description || "No description available"}
+                    <span class="result-description-text">${article.description || "No description available"}</span>
                 </div>
                 ${
                   article.tags && article.tags.length
                     ? `<div class="result-tags">
-                        ${article.tags.map((tag) => `<span class="result-tag">${tag}</span>`).join("")}
+                        ${article.tags.slice(0, 4).map((tag) => `<span class="result-tag">${tag}</span>`).join("")}
                        </div>`
                     : ""
                 }

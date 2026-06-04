@@ -1,7 +1,7 @@
 
 ---
 title: "Contributing to VXON Labs"
-description: "Guide on how to contribute to VXON Labs"
+description: Everything you need to know to start contributing to VXON Labs, including submission guidelines, formatting rules, writing tips, and how to get your content published on the platform.
 date: 2026-06-02
 author: Vxon team
 tags: ["contribute", "guide"]

@@ -27,7 +27,11 @@
     menu.querySelectorAll("button").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var theme = this.dataset.value;
-        applyTheme(theme);
+        if (window.__applyTheme) {
+          window.__applyTheme(theme);
+        } else {
+          applyTheme(theme);
+        }
         localStorage.setItem("theme", theme);
         menu.classList.remove("open");
       });

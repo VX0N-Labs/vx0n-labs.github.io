@@ -4,12 +4,14 @@
   var results = document.getElementById("cmd-results");
   if (!overlay || !input || !results) return;
 
-  var commands = [
+  var navCommands = [
     { label: "Home", path: "/", cmd: "/home" },
     { label: "Team", path: "/team", cmd: "/team" },
-    { label: "Writeups", path: "/posts", cmd: "/posts" },
     { label: "Vxon", path: "/vxon", cmd: "/vxon" },
     { label: "Contribute", path: "/posts/contribute_to_vxon/", cmd: "/contribute" },
+  ];
+
+  var themeCommands = [
     { label: "Theme: dark", action: "theme", value: "dark", cmd: "/theme dark" },
     { label: "Theme: light", action: "theme", value: "light", cmd: "/theme light" },
     { label: "Theme: cyberpunk", action: "theme", value: "cyberpunk", cmd: "/theme cyberpunk" },
@@ -17,36 +19,39 @@
     { label: "Theme: sepia", action: "theme", value: "sepia", cmd: "/theme sepia" },
   ];
 
-  var articlesLoaded = false;
-  var articleCommands = [];
+  var mainCommands = navCommands.concat([
+    { label: "Change Theme", cmd: "/theme", group: "theme" },
+  ]);
 
-  function loadArticles() {
-    if (articlesLoaded) return Promise.resolve(articleCommands);
-    return fetch("/index.json")
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        articleCommands = data.map(function (a) {
-          return { label: a.title, path: a.redirect || a.url, cmd: "/goto " + a.title };
-        });
-        articlesLoaded = true;
-      })
-      .catch(function () {});
+  var currentGroup = null;
+
+  function getCurrentList() {
+    if (currentGroup === "theme") return themeCommands;
+    return mainCommands.slice();
   }
 
   function openPalette() {
+    currentGroup = null;
     overlay.classList.add("open");
     input.value = "";
     results.innerHTML = "";
-    renderCommands(commands);
-    loadArticles();
+    renderCommands(getCurrentList());
     setTimeout(function () { input.focus(); }, 50);
   }
 
   function closePalette() {
     overlay.classList.remove("open");
+    currentGroup = null;
   }
 
   function navigate(cmd) {
+    if (cmd.group === "theme") {
+      currentGroup = "theme";
+      input.value = "";
+      renderCommands(themeCommands);
+      highlightedIndex = 0;
+      return;
+    }
     closePalette();
     if (cmd.action === "theme") {
       if (window.__applyTheme) window.__applyTheme(cmd.value);
@@ -73,12 +78,31 @@
 
   function filterCommands(query) {
     var q = (query || "").toLowerCase();
-    var all = commands;
-    if (articlesLoaded) all = all.concat(articleCommands);
-    if (!query) return all;
-    return all.filter(function (cmd) {
+    var all = getCurrentList();
+    if (!query) {
+      if (currentGroup) {
+        currentGroup = null;
+        return getCurrentList();
+      }
+      return all;
+    }
+
+    if (currentGroup === "theme") {
+      return all.filter(function (cmd) {
+        return cmd.label.toLowerCase().includes(q) || cmd.cmd.toLowerCase().includes(q);
+      });
+    }
+
+    var filtered = all.filter(function (cmd) {
       return cmd.label.toLowerCase().includes(q) || cmd.cmd.toLowerCase().includes(q);
     });
+
+    if (filtered.length === 1 && filtered[0].group === "theme") {
+      currentGroup = "theme";
+      return themeCommands;
+    }
+
+    return filtered;
   }
 
   var highlightedIndex = 0;
@@ -110,7 +134,34 @@
       highlightedIndex = Math.max(highlightedIndex - 1, 0);
       if (items[highlightedIndex]) items[highlightedIndex].classList.add("highlighted");
     } else if (e.key === "Escape") {
-      closePalette();
+      if (currentGroup) {
+        currentGroup = null;
+        input.value = "";
+        renderCommands(getCurrentList());
+        highlightedIndex = 0;
+      } else {
+        closePalette();
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      var filtered = filterCommands(input.value);
+      if (filtered.length > 1) {
+        var prefix = filtered[0].cmd;
+        for (var i = 1; i < filtered.length; i++) {
+          while (filtered[i].cmd.indexOf(prefix) !== 0) {
+            prefix = prefix.slice(0, -1);
+          }
+        }
+        prefix = prefix.trim();
+        input.value = prefix;
+        highlightedIndex = 0;
+        var reFiltered = filterCommands(prefix);
+        renderCommands(reFiltered);
+      } else if (filtered.length === 1) {
+        input.value = filtered[0].cmd;
+        renderCommands(filtered);
+        highlightedIndex = 0;
+      }
     }
   });
 
