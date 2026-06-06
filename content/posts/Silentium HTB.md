@@ -1,5 +1,5 @@
 ---
-title: "Silentium - HTB Walkthrough"
+title: "Silentium HTB"
 author: "Kin"
 tags: [Writeup, Easy, Linux]
 description: "Exploiting Flowise and Gogs vulnerabilities to gain initial access, recover credentials, and escalate privileges to root."

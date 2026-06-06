@@ -1,5 +1,5 @@
 ---
-title: "HTB-Soulmate"
+title: "Soulmate HTB"
 tags: [Writeup, Easy, Linux, htb]
 author: 6cloudguy
 description: A complete walkthrough of the HackTheBox machine "Soulmate" (Easy, Linux) covering web reconnaissance, SQL injection, and privilege escalation techniques used to capture the flags.

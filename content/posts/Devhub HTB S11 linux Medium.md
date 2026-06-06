@@ -1,5 +1,5 @@
 ---
-title: "DevHub - S11 Walkthrough"
+title: "DevHub HTB S-11"
 author: "Kin"
 tags: [Writeup, Medium, Linux]
 description: "Exploiting MCP Jam v1.4.2 to gain RCE, pivot into Jupyter Lab, and escalate privileges to root."
